@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.jorgecastro.ao/">
+  <title>Jorge Castro | Formador & Consultor em Hotelaria e F&B — Food Cost, HACCP e Operações</title>
+  <meta name="description" content="Formação e consultoria prática para Hotelaria e Restauração: Food Cost, HACCP, Economato, Operações e Liderança. Treino in-company e para escolas. Resultados mensuráveis.">
+  <meta name="keywords" content="formação hotelaria, consultoria F&B, food cost, HACCP, gestão restauração, formador hotelaria, economato, gestão de stocks">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jorge Castro | Formador & Consultor em Hotelaria e F&B">
+  <meta property="og:description" content="Formação e consultoria prática: Food Cost, HACCP, Economato e Operações. Resultados mensuráveis e foco em ROI.">
+  <meta property="og:url" content="https://www.jorgecastro.ao/">
+  <meta property="og:image" content="https://z-cdn-media.chatglm.cn/files/25689505-f08b-48b6-86a1-56aa66c6b6ca.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ===== RESET & VARS ===== */
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --primary-dark:#1a3a3a;--primary-accent:#2d5a5a;--secondary-gold:#c9a961;
+      --text-dark:#2c2c2c;--text-light:#515151;--bg-light:#fafafa;--bg-white:#fff;--border-light:#e5e5e5;
+      --font-primary:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-heading:'Poppins',var(--font-primary);
+      --spacing-xs:.5rem;--spacing-sm:1rem;--spacing-md:2rem;--spacing-lg:4rem;--spacing-xl:6rem;
+      --max-width:1200px;--radius:12px;--tr:all .3s ease
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-primary);color:var(--text-dark);line-height:1.7;font-size:16px;background:var(--bg-white)}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:600;line-height:1.25;color:var(--primary-dark)}
+    h1{font-size:clamp(2rem,5vw,3.5rem)} h2{font-size:clamp(1.75rem,4vw,2.4rem)} h3{font-size:clamp(1.25rem,3vw,1.5rem)}
+    p{color:var(--text-light);margin-bottom:1rem}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;height:auto}
+
+    /* ===== ACCESSIBILITY ===== */
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:#000;color:#fff;padding:.5rem .75rem;z-index:1001;border-radius:6px}
+    :focus-visible{outline:3px solid var(--secondary-gold);outline-offset:2px}
+
+    /* ===== NAV ===== */
+    .navbar{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.05);z-index:1000;transition:var(--tr)}
+    .navbar.scrolled{box-shadow:0 2px 30px rgba(0,0,0,.1)}
+    .nav-container{max-width:var(--max-width);margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.2rem;font-weight:700;color:var(--primary-dark);letter-spacing:-.3px;display:flex;align-items:center;gap:.5rem}
+    .logo i{color:var(--secondary-gold)}
+    .nav-menu{display:flex;gap:2rem;list-style:none}
+    .nav-menu a{color:var(--text-dark);font-weight:500;font-size:.95rem;position:relative}
+    .nav-menu a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--secondary-gold);transition:var(--tr)}
+    .nav-menu a:hover{color:var(--primary-accent)}
+    .nav-menu a:hover::after{width:100%}
+    .mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .mobile-toggle span{width:25px;height:3px;background:var(--primary-dark);border-radius:2px;transition:var(--tr)}
+
+    /* ===== HERO ===== */
+    .hero{min-height:100svh;display:flex;align-items:center;background:linear-gradient(135deg,#fafafa 0%,#ffffff 100%);padding:var(--spacing-xl) var(--spacing-md);margin-top:70px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle, rgba(201,169,97,.08) 0%, transparent 70%);border-radius:50%}
+    .hero-container{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:var(--spacing-lg);align-items:center;position:relative;z-index:1}
+    .hero-subtitle{color:var(--secondary-gold);font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:1rem}
+    .hero h1{margin-bottom:1rem}
+    .hero-highlight{color:var(--primary-accent)}
+    .hero-description{font-size:1.15rem;color:var(--text-light);margin-bottom:2rem;max-width:640px}
+    .cta-group{display:flex;gap:1rem;flex-wrap:wrap}
+    .btn{padding:1rem 2rem;border-radius:var(--radius);font-weight:700;font-size:1rem;cursor:pointer;transition:var(--tr);border:2px solid transparent;display:inline-block}
+    .btn-primary{background:var(--primary-dark);color:#fff}
+    .btn-primary:hover{background:var(--primary-accent);transform:translateY(-2px);box-shadow:0 10px 30px rgba(26,58,58,.2)}
+    .btn-outline{background:transparent;color:var(--primary-dark);border-color:var(--primary-dark)}
+    .btn-outline:hover{background:var(--primary-dark);color:#fff}
+    .hero-image{margin: 0 auto;width:100%;max-width:460px;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(26,58,58,.15);position:relative;height:100%}
+    .hero-badge{position:absolute;top:16px;right:16px;background:var(--secondary-gold);color:var(--primary-dark);padding:.45rem .9rem;border-radius:30px;font-weight:700;font-size:.85rem;box-shadow:0 4px 15px rgba(201,169,97,.3);z-index:2}
+
+    /* ===== GENERIC SECTIONS ===== */
+    section{padding:var(--spacing-xl) var(--spacing-md)}
+    .container{max-width:var(--max-width);margin:0 auto}
+    .section-header{text-align:center;margin-bottom:var(--spacing-lg)}
+    .section-subtitle{color:var(--secondary-gold);font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:.75rem}
+    .section-title{margin-bottom:.5rem}
+    .section-description{font-size:1.05rem;color:var(--text-light);max-width:760px;margin:0 auto}
+
+    /* ===== SOBRE ===== */
+    #sobre{background:var(--bg-light)}
+    .sobre-content{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-lg);align-items:center}
+    .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1rem}
+    .stat-item{text-align:center;padding:1.25rem;background:#fff;border-radius:var(--radius);box-shadow:0 4px 15px rgba(0,0,0,.05);transition:var(--tr)}
+    .stat-item:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.1)}
+    .stat-number{font-size:2.2rem;font-weight:800;color:var(--primary-accent);display:block;margin-bottom:.25rem}
+    .stat-label{font-size:.95rem;color:var(--text-light);font-weight:600}
+
+    /* ===== ÁREAS ===== */
+    .areas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
+    .area-card{background:#fff;padding:2rem;border-radius:var(--radius);box-shadow:0 4px 20px rgba(0,0,0,.06);transition:var(--tr);border-top:4px solid var(--secondary-gold);display:flex;flex-direction:column}
+    .area-card:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
+    .area-icon{width:60px;height:60px;background:linear-gradient(135deg,var(--primary-dark),var(--primary-accent));border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:#fff;font-size:1.4rem}
+    .area-card h3{margin-bottom:.5rem}
+    .area-card p{font-size:.95rem;line-height:1.6}
+
+    /* ===== SERVIÇOS ===== */
+    #servicos{background:var(--bg-light)}
+    .servicos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem}
+    .servico-card{background:#fff;padding:2.2rem;border-radius:var(--radius);box-shadow:0 4px 20px rgba(0,0,0,.06);position:relative;overflow:hidden}
+    .servico-card::before{content:'';position:absolute;top:0;left:0;width:5px;height:100%;background:var(--secondary-gold)}
+    .servico-card h3{margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+    .servico-card h3 i{color:var(--secondary-gold);font-size:1.4rem}
+    .servico-features{list-style:none;margin-top:1rem}
+    .servico-features li{padding:.6rem 0 .6rem 1.8rem;position:relative;color:var(--text-light)}
+    .servico-features li::before{content:'\2713';position:absolute;left:0;color:var(--secondary-gold);font-weight:800}
+
+    /* ===== RESULTADOS ===== */
+    #resultados{background:var(--bg-light)}
+    .resultados-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2rem}
+    .resultado-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:var(--tr)}
+    .resultado-card:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
+    .resultado-media{height:200px;display:flex;align-items:center;justify-content:center;background:var(--bg-light);color:var(--text-light);font-size:.95rem;padding:1rem}
+    .resultado-content{padding:1.5rem}
+    .resultado-stats{display:flex;gap:1rem;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--border-light)}
+    .resultado-stat-number{font-size:1.3rem;font-weight:800;color:var(--secondary-gold);display:block}
+    .resultado-stat-label{font-size:.85rem;color:var(--text-light)}
+
+    /* ===== DEPOIMENTOS ===== */
+    #depoimentos{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-accent) 100%);color:#fff}
+    #depoimentos .section-subtitle{color:var(--secondary-gold)}
+    #depoimentos .section-title,#depoimentos .section-description{color:#fff}
+    .deps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;margin-top:2rem}
+    .dep-card{background:rgba(255,255,255,.12);backdrop-filter:blur(10px);padding:1.5rem;border-radius:var(--radius);box-shadow:0 4px 20px rgba(0,0,0,.1)}
+    .dep-text{font-style:italic;margin-bottom:1rem;position:relative;padding-left:1.2rem}
+    .dep-text::before{content:'\201C';position:absolute;left:0;top:-4px;font-size:2.2rem;color:var(--secondary-gold);opacity:.65}
+    .dep-author{display:flex;align-items:center;gap:.8rem}
+    .dep-avatar{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+
+    /* ===== CONTACTO ===== */
+    #contacto{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-accent) 100%);color:#fff}
+    #contacto .section-subtitle{color:var(--secondary-gold)}
+    #contacto .section-title,#contacto .section-description{color:#fff}
+    .contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:var(--spacing-lg);margin-top:2rem}
+    .contact-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;padding:1rem;background:rgba(255,255,255,.12);border-radius:var(--radius)}
+    .contact-icon{width:46px;height:46px;background:var(--secondary-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;color:var(--primary-dark)}
+    .contact-form{background:#fff;color:var(--text-dark);padding:2rem;border-radius:var(--radius);box-shadow:0 20px 60px rgba(0,0,0,.2)}
+    .form-group{margin-bottom:1rem}
+    .form-group label{display:block;margin-bottom:.4rem;font-weight:700;color:var(--text-dark)}
+    .form-group input,.form-group textarea{width:100%;padding:1rem;border:2px solid var(--border-light);border-radius:10px;font-family:var(--font-primary);font-size:1rem;transition:var(--tr)}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--primary-accent)}
+    .form-group textarea{resize:vertical;min-height:150px}
+    .form-submit{width:100%}
+    .hp-field{display:none !important}
+
+    /* ===== FOOTER ===== */
+    footer{background:var(--primary-dark);color:rgba(255,255,255,.85);padding:2.5rem 2rem 2rem;text-align:center}
+    .social-links{display:flex;justify-content:center;gap:1rem;margin-top:1rem}
+    .social-links a{width:40px;height:40px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:var(--tr)}
+    .social-links a:hover{background:var(--secondary-gold);color:var(--primary-dark)}
+
+    /* ===== FAQ ===== */
+    #faq{background:var(--bg-white)}
+    details{border:1px solid var(--border-light);border-radius:10px;padding:1rem;background:#fff}
+    details+details{margin-top:1rem}
+    summary{cursor:pointer;font-weight:700}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:968px){
+      .hero-container,.sobre-content,.servicos-grid,.contact-grid{grid-template-columns:1fr}
+      .nav-menu{position:fixed;left:-100%;top:70px;flex-direction:column;background:#fff;width:100%;padding:1.5rem 2rem;box-shadow:0 10px 30px rgba(0,0,0,.1);transition:var(--tr)}
+      .nav-menu.active{left:0}
+      .mobile-toggle{display:flex}
+      .hero{padding:var(--spacing-lg) var(--spacing-sm)}
+      .cta-group{flex-direction:column}
+      .btn{width:100%;text-align:center}
+      .stats-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      :root{--spacing-lg:3rem;--spacing-xl:4rem}
+      section{padding:var(--spacing-lg) var(--spacing-sm)}
+    }
+  </style>
+
+  <!-- JSON-LD Schema: Person/Organization + Services + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jorge Castro",
+    "jobTitle": "Formador e Consultor em Hotelaria e F&B",
+    "url": "https://www.jorgecastro.ao/",
+    "image": "https://z-cdn-media.chatglm.cn/files/25689505-f08b-48b6-86a1-56aa66c6b6ca.png",
+    "sameAs": [
+      "https://ao.linkedin.com/in/jorge-castro1"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Jorge Castro Formação & Consultoria"
+    },
+    "knowsAbout": [
+      "Food Cost","HACCP","Economato","Gestão de Stocks","Operações de Hotelaria","Formação Profissional"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Que resultados posso esperar da formação?",
+        "acceptedAnswer":{"@type":"Answer","text":"Programas orientados a métricas: redução de custos (food cost), aumento de eficiência operacional e melhoria de satisfação do cliente, com acompanhamento pós-formação."}
+      },
+      {
+        "@type":"Question",
+        "name":"A formação é certificada?",
+        "acceptedAnswer":{"@type":"Answer","text":"Sim. Disponho de formação certificada para entidades de ensino e programas personalizados in-company para o sector de hotelaria e restauração."}
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo principal</a>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="nav-container">
+      <div class="logo" aria-label="Jorge Castro - Início">
+        <i class="fas fa-utensils" aria-hidden="true"></i>
+        <span>Jorge Castro</span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#areas">Formação</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="hero-container" id="conteudo">
+      <div>
+        <p class="hero-subtitle">Formador & Consultor Especializado</p>
+        <h1 id="hero-title"><span class="hero-highlight">Jorge Castro</span><br> Hotelaria, F&B e Gestão Operacional</h1>
+        <p class="hero-description">Formação prática orientada a resultados. Transformo conhecimento técnico em competências operacionais eficazes — com foco em <strong>Food Cost</strong>, <strong>HACCP</strong>, <strong>Economato</strong> e <strong>Operações</strong>.</p>
+        <div class="cta-group" role="group" aria-label="Ações principais">
+          <a href="#contacto" class="btn btn-primary">Solicitar Proposta</a>
+          <a href="#servicos" class="btn btn-outline">Ver Programas</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <figure class="hero-image" aria-label="Imagem de destaque">
+          <figcaption class="hero-badge">Formação Prática</figcaption>
+          <img src="JC_Formação hero.png" alt="Jorge Castro a conduzir formação prática em cozinha profissional para equipas de F&B">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" aria-labelledby="sobre-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Perfil Profissional</p>
+        <h2 class="section-title" id="sobre-title">Experiência Real, Resultados Concretos</h2>
+        <p class="section-description">Actuo com escolas, hotéis, restaurantes e entidades públicas/privadas, unindo rigor técnico, metodologias hands‑on e adaptação ao contexto para garantir impacto mensurável.</p>
+      </div>
+      <div class="sobre-content">
+        <div>
+          <h3>Formação e Consultoria para Hotelaria & Restauração</h3>
+          <p>Com ampla experiência em operações de F&B, controlo de custos e formação de equipas, desenho programas e projectos que respondem a desafios reais do terreno. O foco é sempre o <strong>ROI</strong>, com <em>KPIs</em> claros e acompanhamento.</p>
+          <div class="cta-group" style="margin-top:1rem">
+            <a class="btn btn-primary" href="#contacto">Marcar Diagnóstico (30 min)</a>
+            <a class="btn btn-outline" href="#resultados">Ver Casos & Métricas</a>
+          </div>
+        </div>
+        <div class="stats-grid" aria-label="Indicadores de experiência">
+          <div class="stat-item"><span class="stat-number">15+</span><span class="stat-label">Anos de Experiência</span></div>
+          <div class="stat-item"><span class="stat-number">500+</span><span class="stat-label">Formandos Certificados</span></div>
+          <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">Projectos de Consultoria</span></div>
+          <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Foco em Resultados</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREAS DE FORMAÇÃO -->
+  <section id="areas" aria-labelledby="areas-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Áreas de Especialização</p>
+        <h2 class="section-title" id="areas-title">Formação Técnica e Operacional</h2>
+        <p class="section-description">Programas estruturados e ajustados às necessidades da sua organização — disponibilizados in‑company ou para entidades de ensino.</p>
+      </div>
+      <div class="areas-grid">
+        <article class="area-card"><div class="area-icon" aria-hidden="true"><i class="fas fa-utensils"></i></div><h3>Gestão de F&B</h3><p>Planeamento de serviços, organização de brigadas, mapas de produção e melhoria contínua.</p></article>
+        <article class="area-card"><div class="area-icon" aria-hidden="true"><i class="fas fa-calculator"></i></div><h3>Food Cost & Controlo</h3><p>Medições, fichas técnicas, preço de venda, margem e indicadores de desperdício.</p></article>
+        <article class="area-card"><div class="area-icon" aria-hidden="true"><i class="fas fa-warehouse"></i></div><h3>Economato & Stocks</h3><p>Compras, recepção, armazenagem, inventário e relação com fornecedores.</p></article>
+        <article class="area-card"><div class="area-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div><h3>Segurança Alimentar & HACCP</h3><p>Implementação, auditoria interna, boas práticas e conformidade.</p></article>
+        <article class="area-card"><div class="area-icon" aria-hidden="true"><i class="fas fa-hotel"></i></div><h3>Operações de Hotelaria</h3><p>Front Office, Housekeeping, standards de serviço e qualidade.</p></article>
+        <article class="area-card"><div class="area-icon" aria-hidden="true"><i class="fas fa-users"></i></div><h3>Liderança & Equipas</h3><p>Comunicação, escalas, avaliação de desempenho e resolução de conflitos.</p></article>
+      </div>
+      <div class="cta-group" style="margin-top:1.5rem;justify-content:center">
+        <a class="btn btn-primary" href="#contacto">Solicitar Programa à Medida</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section id="resultados" aria-labelledby="resultados-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Impacto Real</p>
+        <h2 class="section-title" id="resultados-title">Resultados Comprovados</h2>
+        <p class="section-description">Exemplos de resultados obtidos em projectos de formação e consultoria.</p>
+      </div>
+      <div class="resultados-grid">
+        <article class="resultado-card" aria-label="Redução de custos alimentares">
+          <div class="resultado-media"><i class="fas fa-chart-pie" aria-hidden="true" style="font-size:2.2rem;margin-right:.5rem"></i>Dashboard de Food Cost</div>
+          <div class="resultado-content">
+            <h3>Redução de Custos Alimentares</h3>
+            <p>Implementação de sistema de controlo de food cost que permitiu reduzir custos sem comprometer a qualidade.</p>
+            <div class="resultado-stats" aria-label="Indicadores do caso">
+              <div><span class="resultado-stat-number">-18%</span><span class="resultado-stat-label">Custos</span></div>
+              <div><span class="resultado-stat-number">+12%</span><span class="resultado-stat-label">Rentabilidade</span></div>
+              <div><span class="resultado-stat-number">3 meses</span><span class="resultado-stat-label">ROI</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="resultado-card" aria-label="Otimização de processos">
+          <div class="resultado-media"><i class="fas fa-sitemap" aria-hidden="true" style="font-size:2.2rem;margin-right:.5rem"></i>Fluxograma Operacional</div>
+          <div class="resultado-content">
+            <h3>Otimização de Processos</h3>
+            <p>Redesenho de fluxos em cozinha e sala com aumento de eficiência e redução de desperdício.</p>
+            <div class="resultado-stats">
+              <div><span class="resultado-stat-number">+25%</span><span class="resultado-stat-label">Eficiência</span></div>
+              <div><span class="resultado-stat-number">-30%</span><span class="resultado-stat-label">Desperdício</span></div>
+              <div><span class="resultado-stat-number">-15 min</span><span class="resultado-stat-label">Tempo de Serviço</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="resultado-card" aria-label="Desenvolvimento de equipas">
+          <div class="resultado-media"><i class="fas fa-trophy" aria-hidden="true" style="font-size:2.2rem;margin-right:.5rem"></i>Métricas de Desempenho</div>
+          <div class="resultado-content">
+            <h3>Desenvolvimento de Equipas</h3>
+            <p>Programa de formação e capacitação com melhoria significativa de satisfação e retenção.</p>
+            <div class="resultado-stats">
+              <div><span class="resultado-stat-number">+35%</span><span class="resultado-stat-label">Satisfação</span></div>
+              <div><span class="resultado-stat-number">-20%</span><span class="resultado-stat-label">Rotatividade</span></div>
+              <div><span class="resultado-stat-number">+40%</span><span class="resultado-stat-label">Upselling</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="cta-group" style="margin-top:1.5rem;justify-content:center">
+        <a class="btn btn-primary" href="#contacto">Quero resultados como estes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" aria-labelledby="servicos-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Soluções Profissionais</p>
+        <h2 class="section-title" id="servicos-title">Serviços de Formação e Consultoria</h2>
+      </div>
+      <div class="servicos-grid">
+        <article class="servico-card">
+          <h3><i class="fas fa-graduation-cap"></i> Formação Profissional</h3>
+          <p>Cursos de curta e longa duração para escolas e centros de formação, com certificação e material didáctico.</p>
+          <ul class="servico-features">
+            <li>Planos modulares e ajustáveis</li>
+            <li>Certificação reconhecida</li>
+            <li>Material e exercícios práticos</li>
+            <li>Avaliação por competências</li>
+          </ul>
+        </article>
+        <article class="servico-card">
+          <h3><i class="fas fa-building"></i> Formação In‑Company</h3>
+          <p>Programas à medida nas suas instalações, orientados a resultados e KPIs operacionais.</p>
+          <ul class="servico-features">
+            <li>Diagnóstico de necessidades</li>
+            <li>On-the-job training</li>
+            <li>KPIs e follow‑up</li>
+            <li>Relatório de impacto</li>
+          </ul>
+        </article>
+        <article class="servico-card">
+          <h3><i class="fas fa-briefcase"></i> Consultoria Operacional</h3>
+          <p>Auditoria, otimização de processos, implementação de sistemas e mentoria.</p>
+          <ul class="servico-features">
+            <li>Mapeamento de processos</li>
+            <li>Food cost & economato</li>
+            <li>HACCP e conformidade</li>
+            <li>Mentoria de equipas</li>
+          </ul>
+        </article>
+        <article class="servico-card">
+          <h3><i class="fas fa-chalkboard-teacher"></i> Workshops & Capacitação</h3>
+          <p>Sessões intensivas e temáticas com aplicação imediata em contexto operacional.</p>
+          <ul class="servico-features">
+            <li>Formação‑acção</li>
+            <li>Casos práticos</li>
+            <li>Guias e templates</li>
+            <li>Plano de 90 dias</li>
+          </ul>
+        </article>
+      </div>
+      <div class="cta-group" style="margin-top:1.5rem;justify-content:center">
+        <a class="btn btn-primary" href="#contacto">Pedir proposta personalizada</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" aria-labelledby="depoimentos-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Opinião dos Clientes</p>
+        <h2 class="section-title" id="depoimentos-title">O que dizem</h2>
+        <p class="section-description">Substitua estes exemplos por depoimentos reais com nome, cargo, empresa e autorização.</p>
+      </div>
+      <div class="deps-grid">
+        <article class="dep-card">
+          <p class="dep-text">“A abordagem ao food cost reduziu as perdas e clarificou o preço certo por prato. O retorno foi rápido.”</p>
+          <div class="dep-author"><div class="dep-avatar" aria-hidden="true">AB</div><div><strong>Nome do Cliente</strong><br><span>Diretor(a) de F&B, Empresa</span></div></div>
+        </article>
+        <article class="dep-card">
+          <p class="dep-text">“Workshops práticos que a equipa aplicou no dia seguinte. Melhorou a coordenação entre cozinha e sala.”</p>
+          <div class="dep-author"><div class="dep-avatar" aria-hidden="true">CD</div><div><strong>Nome do Cliente</strong><br><span>Chef Executivo, Restaurante</span></div></div>
+        </article>
+        <article class="dep-card">
+          <p class="dep-text">“Reestruturação do economato, redução de desperdício e maior previsibilidade de compras.”</p>
+          <div class="dep-author"><div class="dep-avatar" aria-hidden="true">EF</div><div><strong>Nome do Cliente</strong><br><span>Gerente, Catering</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Perguntas Frequentes</p>
+        <h2 class="section-title" id="faq-title">FAQ</h2>
+        <p class="section-description">Informação prática sobre formatos, certificação e prazos.</p>
+      </div>
+      <details>
+        <summary>Quanto tempo dura a formação?</summary>
+        <p>Desde workshops de 4–8 horas até programas completos de 16–60 horas, conforme objectivos e disponibilidade da equipa.</p>
+      </details>
+      <details>
+        <summary>Trabalha fora de Portugal/Angola?</summary>
+        <p>Sim. Programas presenciais e remotos, com materiais e acompanhamento online.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" aria-labelledby="contacto-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Vamos Trabalhar Juntos</p>
+        <h2 class="section-title" id="contacto-title">Entre em Contacto</h2>
+        <p class="section-description">Pronto para elevar a qualidade da formação ou optimizar operações? Envie a sua mensagem ou marque um diagnóstico.</p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-item"><div class="contact-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div><div><h3 style="color:#fff;margin-bottom:.25rem">Email</h3><p><a href="mailto:formacao@jorgecastro.com">formacao@jorgecastro.com</a></p></div></div>
+          <div class="contact-item"><div class="contact-icon" aria-hidden="true"><i class="fas fa-phone"></i></div><div><h3 style="color:#fff;margin-bottom:.25rem">Telefone</h3><p><a href="tel:+244923456789">+244 923 456 789</a></p></div></div>
+          <div class="contact-item"><div class="contact-icon" aria-hidden="true"><i class="fab fa-linkedin"></i></div><div><h3 style="color:#fff;margin-bottom:.25rem">LinkedIn</h3><p><a href="https://ao.linkedin.com/in/jorge-castro1" target="_blank" rel="noopener">ao.linkedin.com/in/jorge-castro1</a></p></div></div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="hp-field"><label>Não preencha</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+          <div class="form-group"><label for="nome">Nome Completo *</label><input type="text" id="nome" name="nome" required autocomplete="name" aria-required="true"></div>
+          <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required autocomplete="email" aria-required="true"></div>
+          <div class="form-group"><label for="telefone">Telefone</label><input type="tel" id="telefone" name="telefone" autocomplete="tel"></div>
+          <div class="form-group"><label for="assunto">Assunto *</label><input type="text" id="assunto" name="assunto" required aria-required="true"></div>
+          <div class="form-group"><label for="mensagem">Mensagem *</label><textarea id="mensagem" name="mensagem" required aria-required="true"></textarea></div>
+          <button type="submit" class="btn btn-primary form-submit">Enviar Mensagem</button>
+          <p id="formStatus" role="status" style="margin-top:.5rem"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Jorge Castro — Formação & Consultoria em Hotelaria e F&B. Todos os direitos reservados.</p>
+      <div class="social-links" aria-label="Redes sociais">
+        <a href="https://ao.linkedin.com/in/jorge-castro1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Helpers
+    const $ = (s, ctx=document) => ctx.querySelector(s);
+    const $$ = (s, ctx=document) => Array.from(ctx.querySelectorAll(s));
+
+    // Year
+    $('#year').textContent = new Date().getFullYear();
+
+    // Navbar scroll effect
+    const navbar = $('#navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = $('#mobileToggle');
+    const navMenu = $('#navMenu');
+    mobileToggle.addEventListener('click', () => {
+      const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', (!expanded).toString());
+      navMenu.classList.toggle('active');
+    });
+    $$('#navMenu a').forEach(a => a.addEventListener('click', () => navMenu.classList.remove('active')));
+
+    // Contact form (frontend mock)
+    const form = $('#contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      if (fd.get('website')) return; // honeypot
+      const required = ['nome','email','assunto','mensagem'];
+      const ok = required.every(k => (fd.get(k)||'').trim().length);
+      const status = $('#formStatus');
+      if (ok) {
+        status.textContent = 'Mensagem enviada com sucesso! Entrarei em contacto brevemente.';
+        status.style.color = 'green';
+        form.reset();
+      } else {
+        status.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+        status.style.color = 'crimson';
+      }
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach((entry)=>{ if(entry.isIntersecting){ entry.target.classList.add('fade-in'); } });
+    }, {threshold:0.08, rootMargin:'0px 0px -50px 0px'});
+    $$('.area-card, .servico-card, .resultado-card, .dep-card').forEach(el => observer.observe(el));
+  </script>
+
+  <style>
+    /* Simple fade-in animation */
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .fade-in{animation:fadeInUp .6s ease-out}
+  </style>
+
+  <!-- GA4 (opcional): substitua G-XXXXXXXXXX pelo seu ID
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
+  </script> -->
+</body>
+</html>

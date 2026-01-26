@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jorge Castro - Formador e Consultor especializado em Hotelaria, F&B e Gestão Operacional. Formação prática orientada a resultados para hotéis, restaurantes e escolas profissionais.">
+    <meta name="keywords" content="formação hotelaria, consultoria F&B, food cost, HACCP, gestão restauração, formador hotelaria">
+    <title>Jorge Castro | Formador & Consultor em Hotelaria e F&B</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== RESET E VARIÁVEIS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Paleta de cores */
+            --primary-dark: #1a3a3a;
+            --primary-accent: #2d5a5a;
+            --secondary-gold: #c9a961;
+            --text-dark: #2c2c2c;
+            --text-light: #6b6b6b;
+            --bg-light: #fafafa;
+            --bg-white: #ffffff;
+            --border-light: #e5e5e5;
+            
+            /* Tipografia */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-heading: 'Poppins', var(--font-primary);
+            
+            /* Espaçamento */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            
+            /* Layout */
+            --max-width: 1200px;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        /* ===== TIPOGRAFIA BASE ===== */
+        body {
+            font-family: var(--font-primary);
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 16px;
+            background: var(--bg-white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--primary-dark);
+        }
+        
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+        
+        p { 
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* ===== NAVEGAÇÃO ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo i {
+            color: var(--secondary-gold);
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-gold);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-accent);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-dark);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            padding: var(--spacing-xl) var(--spacing-md);
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(201,169,97,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero-subtitle {
+            color: var(--secondary-gold);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-highlight {
+            color: var(--primary-accent);
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(26, 58, 58, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(26, 58, 58, 0.15);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* ===== SECTIONS GERAIS ===== */
+        section {
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .section-subtitle {
+            color: var(--secondary-gold);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .section-title {
+            margin-bottom: 1rem;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* ===== SOBRE ===== */
+        #sobre {
+            background: var(--bg-light);
+        }
+        
+        .sobre-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+        
+        .sobre-text h3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .sobre-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        /* ===== ÁREAS DE FORMAÇÃO ===== */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .area-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-gold);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .area-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        
+        .area-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .area-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .area-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .area-image {
+            margin-top: 1.5rem;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .area-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .area-card:hover .area-image img {
+            transform: scale(1.05);
+        }
+        
+        /* ===== SERVIÇOS ===== */
+        #servicos {
+            background: var(--bg-light);
+        }
+        
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .servico-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .servico-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--secondary-gold);
+        }
+        
+        .servico-card h3 {
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .servico-card h3 i {
+            color: var(--secondary-gold);
+            font-size: 1.5rem;
+        }
+        
+        .servico-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .servico-features li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-light);
+        }
+        
+        .servico-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* ===== DIFERENCIAÇÃO ===== */
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .diferencial-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .diferencial-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .diferencial-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(201,169,97,0.1), rgba(201,169,97,0.2));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--secondary-gold);
+            transition: var(--transition);
+        }
+        
+        .diferencial-item:hover .diferencial-icon {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-accent));
+            color: white;
+        }
+        
+        .diferencial-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* ===== RESULTADOS ===== */
+        #resultados {
+            background: var(--bg-light);
+        }
+        
+        .resultados-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .resultado-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: var(--transition);
+        }
+        
+        .resultado-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        
+        .resultado-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .resultado-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .resultado-card:hover .resultado-image img {
+            transform: scale(1.05);
+        }
+        
+        .resultado-content {
+            padding: 2rem;
+        }
+        
+        .resultado-content h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-accent);
+        }
+        
+        .resultado-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .resultado-stats {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+        
+        .resultado-stat {
+            text-align: center;
+        }
+        
+        .resultado-stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-gold);
+            display: block;
+        }
+        
+        .resultado-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        /* ===== PÚBLICO-ALVO ===== */
+        #publico {
+            background: var(--bg-light);
+        }
+        
+        .publico-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .publico-card {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .publico-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .publico-card h4 {
+            color: var(--primary-accent);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .publico-card h4 i {
+            color: var(--secondary-gold);
+        }
+        
+        /* ===== DEPOIMENTOS ===== */
+        #depoimentos {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-accent) 100%);
+            color: white;
+        }
+        
+        #depoimentos .section-subtitle {
+            color: var(--secondary-gold);
+        }
+        
+        #depoimentos .section-title,
+        #depoimentos .section-description {
+            color: white;
+        }
+        
+        .depoimentos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .depoimento-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .depoimento-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .depoimento-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .depoimento-text::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: var(--secondary-gold);
+            opacity: 0.5;
+        }
+        
+        .depoimento-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .depoimento-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .depoimento-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .depoimento-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .depoimento-info p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        
+        /* ===== CONTACTO ===== */
+        #contacto {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-accent) 100%);
+            color: white;
+        }
+        
+        #contacto .section-subtitle {
+            color: var(--secondary-gold);
+        }
+        
+        #contacto .section-title,
+        #contacto .section-description {
+            color: white;
+        }
+        
+        .contacto-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--spacing-lg);
+            margin-top: 3rem;
+        }
+        
+        .contacto-info h3 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .contacto-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+        
+        .contacto-item:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .contacto-item-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            color: var(--primary-dark);
+        }
+        
+        .contacto-item-content h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contacto-item-content p {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .contacto-form {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-light);
+            border-radius: var(--border-radius);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-accent);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .form-submit {
+            width: 100%;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary-dark);
+            color: rgba(255,255,255,0.8);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-gold);
+            color: var(--primary-dark);
+        }
+        
+        /* ===== ANIMAÇÕES ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 968px) {
+            .hero-container,
+            .sobre-content,
+            .servicos-grid,
+            .contacto-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-visual {
+                order: -1;
+            }
+            
+            .hero-image {
+                max-width: 350px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                transition: var(--transition);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            :root {
+                --spacing-lg: 3rem;
+                --spacing-xl: 4rem;
+            }
+            
+            section {
+                padding: var(--spacing-lg) var(--spacing-sm);
+            }
+            
+            .hero {
+                padding: var(--spacing-lg) var(--spacing-sm);
+            }
+            
+            .cta-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .areas-grid,
+            .diferenciais-grid,
+            .publico-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contacto-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGAÇÃO -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                Jorge Castro
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#areas">Formação</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-subtitle">Formador & Consultor Especializado</div>
+                <h1>
+                    <span class="hero-highlight">Jorge Castro</span><br>
+                    Hotelaria, F&B e Gestão Operacional
+                </h1>
+                <p class="hero-description">
+                    Formação prática orientada a resultados, baseada em experiência real de terreno. Transformo conhecimento técnico em competências operacionais eficazes.
+                </p>
+                <div class="cta-group">
+                    <a href="#contacto" class="btn btn-primary">Solicitar Proposta</a>
+                    <a href="#sobre" class="btn btn-outline">Saber Mais</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/hospitality-professional/450/450.jpg" alt="Jorge Castro - Formador e Consultor">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Perfil Profissional</div>
+                <h2 class="section-title">Experiência Real, Resultados Concretos</h2>
+            </div>
+            
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h3>Especialista em Formação e Consultoria para o Sector da Hotelaria e Restauração</h3>
+                    <p>
+                        Com vasta experiência no terreno em operações de F&B, gestão de custos e formação de equipas, desenvolvo soluções práticas que respondem aos desafios reais das organizações.
+                    </p>
+                    <p>
+                        A minha abordagem combina rigor técnico, metodologias comprovadas e adaptação ao contexto específico de cada cliente, garantindo formações que geram impacto mensurável no desempenho operacional.
+                    </p>
+                    <p>
+                        Trabalho com escolas profissionais, institutos de formação, hotéis, restaurantes e entidades públicas e privadas, oferecendo formação certificada e consultoria estratégica em gestão operacional.
+                    </p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Anos de Experiência</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Formandos Certificados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projectos de Consultoria</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Foco em Resultados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÁREAS DE FORMAÇÃO -->
+    <section id="areas">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Áreas de Especialização</div>
+                <h2 class="section-title">Formação Técnica e Operacional</h2>
+                <p class="section-description">
+                    Programas de formação estruturados, certificados e adaptados às necessidades específicas de cada organização.
+                </p>
+            </div>
+            
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Gestão de F&B</h3>
+                    <p>Gestão operacional de Food & Beverage, planeamento de serviços, organização de brigadas e optimização de processos em restauração.</p>
+                    <div class="area-image">
+                        <img src="https://picsum.photos/seed/food-beverage-management/400/200.jpg" alt="Gestão de F&B">
+                    </div>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Food Cost & Controlo de Custos</h3>
+                    <p>Análise e controlo de custos alimentares, cálculo de food cost, pricing estratégico e rentabilização de operações.</p>
+                    <div class="area-image">
+                        <img src="https://picsum.photos/seed/food-cost-analysis/400/200.jpg" alt="Food Cost & Controlo de Custos">
+                    </div>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Economato e Gestão de Stocks</h3>
+                    <p>Gestão de compras, armazenamento, controlo de inventários, relação com fornecedores e optimização de stocks.</p>
+                    <div class="area-image">
+                        <img src="https://picsum.photos/seed/warehouse-inventory/400/200.jpg" alt="Economato e Gestão de Stocks">
+                    </div>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança Alimentar & HACCP</h3>
+                    <p>Implementação de sistemas HACCP, boas práticas de higiene e segurança alimentar, conformidade regulamentar.</p>
+                    <div class="area-image">
+                        <img src="https://picsum.photos/seed/food-safety-haccp/400/200.jpg" alt="Segurança Alimentar & HACCP">
+                    </div>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Operações de Hotelaria</h3>
+                    <p>Gestão de operações hoteleiras, standards de serviço, housekeeping, front office e controlo de qualidade.</p>
+                    <div class="area-image">
+                        <img src="https://picsum.photos/seed/hotel-operations/400/200.jpg" alt="Operações de Hotelaria">
+                    </div>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Liderança e Gestão de Equipas</h3>
+                    <p>Desenvolvimento de competências de liderança, gestão de equipas operacionais, comunicação eficaz e resolução de conflitos.</p>
+                    <div class="area-image">
+                        <img src="https://picsum.photos/seed/team-leadership/400/200.jpg" alt="Liderança e Gestão de Equipas">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section id="resultados">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Impacto Real</div>
+                <h2 class="section-title">Resultados Comprovados</h2>
+                <p class="section-description">
+                    As minhas formações e consultorias geram resultados mensuráveis que transformam operações e elevam padrões de qualidade.
+                </p>
+            </div>
+            
+            <div class="resultados-container">
+                <div class="resultado-card">
+                    <div class="resultado-image">
+                        <img src="https://picsum.photos/seed/food-cost-dashboard/600/400.jpg" alt="Dashboard de Food Cost">
+                    </div>
+                    <div class="resultado-content">
+                        <h3>Redução de Custos Alimentares</h3>
+                        <p>Implementação de sistema de controlo de food cost que permitiu reduzir os custos em 18% sem comprometer a qualidade.</p>
+                        <div class="resultado-stats">
+                            <div class="resultado-stat">
+                                <span class="resultado-stat-number">-18%</span>
+                                <span class="resultado-stat-label">Custos</span>
+                            </div>
+                            <div class="resultado-stat">
+                                <span class="resultado-stat-number">+12%</span>
+                                <span class="resultado-stat-label">Rentabilidade</span>
+                            </div>
+                            <div class="resultado-stat">
+                                <span class="resultado-stat-number">3 meses</span>
+                                <span class="resultado-stat-label">ROI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resultado-card">
+                    <div class="resultado-image">
+                        <img src="https://picsum.photos/seed/operational-flow-chart/600/400.jpg" alt="Fluxograma Operacional">
+                    </div>
+                    <div class="resultado-content">
+                        <h3>Otimização de Processos Operacionais</h3>
+                        <p>Redesenho de fluxos de trabalho em cozinha e restaurante que resultou em aumento de eficiência e redução de desperdício.</p>
+                        <div class="resultado-stats">
+                            <div class="resultado-stat">
+                                <span class="resultado-stat-number">+25%</span>
+                                <span class="resultado-stat-label">Eficiência</span>
+                            </div>
+                            <div class="resultado-stat">
+                                <span class="resultado-stat-number">-30%</span>
+                                <span class="resultado-stat-label">Desperdício</span>
+                            </div>
+                            <div class="resultado-stat">
+                                <span class="resultado-stat-number">15 min</span>
+                                <span class="resultado-stat-label">Tempo de Serviço</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resultado-card">
+                    <div class="resultado-image">
+                        <img src="https://picsum.photos/seed/team-performance-metrics/600/400.jpg" alt="Métricas de Desempenho de Equipa">
+                    </div>
+                    <div class="resultado-content">
+                        <h3>Desenvolvimento de Equipas</h3>
+                        <p>Programa de formação e capacitação que elevou o desempenho das equipas e melhorou significativamente a satisfação dos clientes.</p>
+                        <div class="resultado-stats">
+                            <div class="resultado-stat">
+                                <span class="resultado-stat-number">+35%</span>
+                                <span class="resultado-stat-label">Satisfação</span>
+                            </div>
+                            <div class="resultado-stat">
+                                <span class="resultado-stat-number">-20%</span>
+                                <span class="resultado-stat-label">Rotatividade</span>
+                            </div>
+                            <div class="resultado-stat">
+                                <span class="resultado-stat-number">40%</span>
+                                <span class="resultado-stat-label">Upselling</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Soluções Profissionais</div>
+                <h2 class="section-title">Serviços de Formação e Consultoria</h2>
+            </div>
+            
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Formação Profissional</h3>
+                    <p>Programas de formação certificada para escolas, institutos e centros de formação profissional, com módulos adaptáveis e certificação reconhecida.</p>
+                    <ul class="servico-features">
+                        <li>Cursos de curta e longa duração</li>
+                        <li>Certificação profissional</li>
+                        <li>Material didáctico incluído</li>
+                        <li>Acompanhamento personalizado</li>
+                    </ul>
+                </div>
+                
+                <div class="servico-card">
+                    <h3><i class="fas fa-building"></i> Formação In-Company</h3>
+                    <p>Formações customizadas realizadas nas instalações do cliente, desenhadas para responder a desafios operacionais específicos da organização.</p>
+                    <ul class="servico-features">
+                        <li>Diagnóstico de necessidades</li>
+                        <li>Programas à medida</li>
+                        <li>Formação prática no local</li>
+                        <li>Avaliação de resultados</li>
+                    </ul>
+                </div>
+                
+                <div class="servico-card">
+                    <h3><i class="fas fa-briefcase"></i> Consultoria Operacional</h3>
+                    <p>Consultoria estratégica e operacional para optimização de processos, redução de custos e melhoria de performance em unidades hoteleiras e de restauração.</p>
+                    <ul class="servico-features">
+                        <li>Auditoria operacional</li>
+                        <li>Optimização de processos</li>
+                        <li>Implementação de sistemas</li>
+                        <li>Mentoria e acompanhamento</li>
+                    </ul>
+                </div>
+                
+                <div class="servico-card">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Workshops e Capacitação</h3>
+                    <p>Sessões intensivas e workshops práticos para desenvolvimento rápido de competências específicas em contextos operacionais.</p>
+                    <ul class="servico-features">
+                        <li>Workshops temáticos</li>
+                        <li>Formação-acção</li>
+                        <li>Casos práticos</li>
+                        <li>Networking profissional</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAÇÃO -->
+    <section id="diferenciais">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">O Que Nos Diferencia</div>
+                <h2 class="section-title">Abordagem Prática e Orientada a Resultados</h2>
+            </div>
+            
+            <div class="diferenciais-grid">
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Formação Prática</h3>
+                    <p>Metodologias hands-on com casos reais, simulações e exercícios práticos aplicáveis imediatamente no terreno.</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Foco em Resultados</h3>
+                    <p>Objectivos mensuráveis, KPIs claros e acompanhamento pós-formação para garantir impacto efectivo.</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Experiência Real</h3>
+                    <p>Conhecimento baseado em anos de prática operacional em hotelaria e restauração de alto nível.</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Contexto Africano</h3>
+                    <p>Formação adaptada à realidade dos mercados africanos e lusófonos, com sensibilidade cultural e operacional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÚBLICO-ALVO -->
+    <section id="publico">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Quem Trabalhamos</div>
+                <h2 class="section-title">Público-Alvo e Parceiros</h2>
+            </div>
+            
+            <div class="publico-grid">
+                <div class="publico-card">
+                    <h4><i class="fas fa-school"></i> Escolas e Institutos</h4>
+                    <p>Formação profissional certificada para estudantes</p>
+                </div>
+                
+                <div class="publico-card">
+                    <h4><i class="fas fa-hotel"></i> Hotéis e Resorts</h4>
+                    <p>Capacitação de equipas operacionais</p>
+                </div>
+                
+                <div class="publico-card">
+                    <h4><i class="fas fa-utensils"></i> Restaurantes</h4>
+                    <p>Consultoria e formação em F&B</p>
+                </div>
+                
+                <div class="publico-card">
+                    <h4><i class="fas fa-concierge-bell"></i> Empresas de Catering</h4>
+                    <p>Optimização operacional e controlo de custos</p>
+                </div>
+                
+                <div class="publico-card">
+                    <h4><i class="fas fa-landmark"></i> Entidades Públicas</h4>
+                    <p>Programas de formação profissional</p>
+                </div>
+                
+                <div class="publico-card">
+                    <h4><i class="fas fa-city"></i> Empresas Privadas</h4>
+                    <p>Formação corporativa e consultoria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Opinião dos Clientes</div>
+                <h2 class="section-title">O Que Dizem Sobre Nós</h2>
+            </div>
+            
+            <div class="depoimentos-container">
+                <div class="depoimento-card">
+                    <p class="depoimento-text">
+                        A formação com Jorge Castro transformou completamente a nossa abordagem ao food cost. Reduzimos os custos em 15% e melhorámos a qualidade do nosso serviço. Recomendo sem hesitação.
+                    </p>
+                    <div class="depoimento-author">
+                        <div class="depoimento-avatar">
+                            <img src="https://picsum.photos/seed/client-maria-silva/100/100.jpg" alt="Maria Silva">
+                        </div>
+                        <div class="depoimento-info">
+                            <h4>Maria Silva</h4>
+                            <p>Diretora de F&B, Hotel Luxus</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="depoimento-card">
+                    <p class="depoimento-text">
+                        Os workshops práticos do Jorge foram extremamente valiosos para a nossa equipa. A metodologia de formação-acção permitiu aplicar imediatamente os conhecimentos no nosso dia a dia.
+                    </p>
+                    <div class="depoimento-author">
+                        <div class="depoimento-avatar">
+                            <img src="https://picsum.photos/seed/client-joao-santos/100/100.jpg" alt="João Santos">
+                        </div>
+                        <div class="depoimento-info">
+                            <h4>João Santos</h4>
+                            <p>Chef de Cozinha, Restaurante Sabores</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="depoimento-card">
+                    <p class="depoimento-text">
+                        Contratámos a consultoria do Jorge para reestruturar o nosso economato e os resultados foram excecionais. Optimizámos stocks, reduzimos desperdício e melhorámos a rentabilidade.
+                    </p>
+                    <div class="depoimento-author">
+                        <div class="depoimento-avatar">
+                            <img src="https://picsum.photos/seed/client-ana-costa/100/100.jpg" alt="Ana Costa">
+                        </div>
+                        <div class="depoimento-info">
+                            <h4>Ana Costa</h4>
+                            <p>Gerente, Catering Express</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Vamos Trabalhar Juntos</div>
+                <h2 class="section-title">Entre em Contacto</h2>
+                <p class="section-description">
+                    Pronto para elevar a qualidade da sua formação ou optimizar as suas operações? Contacte-me para discutir como posso ajudar.
+                </p>
+            </div>
+            
+            <div class="contacto-content">
+                <div class="contacto-info">
+                    <h3>Informações de Contacto</h3>
+                    
+                    <div class="contacto-item">
+                        <div class="contacto-item-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contacto-item-content">
+                            <h4>Email</h4>
+                            <p>formacao@jorgecastro.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contacto-item">
+                        <div class="contacto-item-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contacto-item-content">
+                            <h4>Telefone</h4>
+                            <p>+244 923 456 789</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contacto-item">
+                        <div class="contacto-item-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contacto-item-content">
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/jorgecastro</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contacto-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="assunto">Assunto *</label>
+                            <input type="text" id="assunto" name="assunto" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Jorge Castro - Formador & Consultor em Hotelaria e F&B. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Fechar menu mobile após clique
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // ===== FORM SUBMISSION =====
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aqui você pode adicionar integração com backend/API
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Exemplo de validação simples
+            if (data.nome && data.email && data.mensagem) {
+                alert('Mensagem enviada com sucesso! Entrarei em contacto brevemente.');
+                this.reset();
+            } else {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+            }
+        });
+        
+        // ===== FADE IN ON SCROLL (OPCIONAL) =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos para animação
+        document.querySelectorAll('.area-card, .servico-card, .diferencial-item, .publico-card, .resultado-card, .depoimento-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
