@@ -143,6 +143,7 @@
     #contacto .section-title,#contacto .section-description{color:#fff}
     .contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:var(--spacing-lg);margin-top:2rem}
     .contact-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;padding:1rem;background:rgba(255,255,255,.12);border-radius:var(--radius)}
+    .contact-item div p a{color:#fff;text-decoration:none}
     .contact-icon{width:46px;height:46px;background:var(--secondary-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;color:var(--primary-dark)}
     .contact-form{background:#fff;color:var(--text-dark);padding:2rem;border-radius:var(--radius);box-shadow:0 20px 60px rgba(0,0,0,.2)}
     .form-group{margin-bottom:1rem}
@@ -192,7 +193,7 @@
     "url": "https://www.jorgecastro.ao/",
     "image": "https://z-cdn-media.chatglm.cn/files/25689505-f08b-48b6-86a1-56aa66c6b6ca.png",
     "sameAs": [
-      "https://ao.linkedin.com/in/jorge-castro1"
+      "http://www.linkedin.com/in/jorge-castro"
     ],
     "worksFor": {
       "@type": "Organization",
@@ -230,7 +231,8 @@
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
     <div class="nav-container">
       <div class="logo" aria-label="Jorge Castro - Início">
-        <i class="fas fa-utensils" aria-hidden="true"></i>
+        <img src="JCFormador_logo.png" alt="Logótipo Jorge Castro" style="height:50px;width:auto">
+        <!-- <i class="fas fa-utensils" aria-hidden="true"></i> -->
         <span>Jorge Castro</span>
       </div>
       <ul class="nav-menu" id="navMenu">
@@ -479,9 +481,7 @@
       </div>
       <div class="contact-grid">
         <div>
-          <div class="contact-item"><div class="contact-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div><div><h3 style="color:#fff;margin-bottom:.25rem">Email</h3><p><a href="mailto:formacao@jorgecastro.com">formacao@jorgecastro.com</a></p></div></div>
-          <div class="contact-item"><div class="contact-icon" aria-hidden="true"><i class="fas fa-phone"></i></div><div><h3 style="color:#fff;margin-bottom:.25rem">Telefone</h3><p><a href="tel:+244923456789">+244 923 456 789</a></p></div></div>
-          <div class="contact-item"><div class="contact-icon" aria-hidden="true"><i class="fab fa-linkedin"></i></div><div><h3 style="color:#fff;margin-bottom:.25rem">LinkedIn</h3><p><a href="https://ao.linkedin.com/in/jorge-castro1" target="_blank" rel="noopener">ao.linkedin.com/in/jorge-castro1</a></p></div></div>
+          <div class="contact-item"><div class="contact-icon" aria-hidden="true"><i class="fab fa-linkedin"></i></div><div><h3 style="color:#fff;margin-bottom:.25rem">LinkedIn</h3><p><a href="http://www.linkedin.com/in/jorge-castro" target="_blank" rel="noopener">Jorge Castro</a></p></div></div>
         </div>
         <form class="contact-form" id="contactForm" novalidate>
           <div class="hp-field"><label>Não preencha</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
@@ -502,7 +502,7 @@
     <div class="container">
       <p>© <span id="year"></span> Jorge Castro — Formação & Consultoria em Hotelaria e F&B. Todos os direitos reservados.</p>
       <div class="social-links" aria-label="Redes sociais">
-        <a href="https://ao.linkedin.com/in/jorge-castro1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="http://www.linkedin.com/in/jorge-castro" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -547,6 +547,11 @@
       if (ok) {
         status.textContent = 'Mensagem enviada com sucesso! Entrarei em contacto brevemente.';
         status.style.color = 'green';
+        //criar lógica de envio real aqui para o endereço de email "consultor@jorgecastro.ao"
+        const data = { nome: fd.get('nome'), email: fd.get('email'), telefone: fd.get('telefone'), assunto: fd.get('assunto'), mensagem: fd.get('mensagem') };
+        fetch('https://formspree.io/f/YOUR_FORM_ID', { method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' } })
+          .then(r => r.ok ? Promise.resolve() : Promise.reject())
+          .catch(() => { status.textContent = 'Erro ao enviar. Tente novamente.'; status.style.color = 'crimson'; });
         form.reset();
       } else {
         status.textContent = 'Por favor, preencha todos os campos obrigatórios.';
